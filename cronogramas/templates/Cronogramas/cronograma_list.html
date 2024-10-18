@@ -13,7 +13,6 @@
             <th>Tipo de Pago</th>
         </tr>
         </thead>
-        <!----
         <tbody>
         {% for cronograma in cronogramas %}
         <tr>
@@ -24,13 +23,9 @@
             <td>{{ cronograma.fecha_causacion }}</td>
             <td>{{ cronograma.tipo_pago }}</td>
             <p>Total de cronogramas: {{ cronogramas|length }}</p>
-            <td>
-                <a href="{% url 'cronograma_delete' cronograma.id %}" class="btn btn-danger">Eliminar</a>
-            </td>
         </tr>
         {% endfor %}
         </tbody>
-        --->
     </table>
     <a href="{% url 'cronograma_create' %}" class="btn btn-success">Agregar Cronograma</a>
 </div>
