@@ -25,7 +25,6 @@
             <td>{{ cronograma.tipo_pago }}</td>
             <td>
                 <a href="{% url 'cronograma_delete' cronograma.id %}" class="btn btn-danger">Eliminar</a>
-                <a href="{% url 'cronograma_edit' cronograma.id %}" class="btn btn-warning">Editar</a> <!-- Asegúrate de que esta URL esté definida -->
             </td>
         </tr>
         {% endfor %}
