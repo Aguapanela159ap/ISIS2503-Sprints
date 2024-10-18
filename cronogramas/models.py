@@ -14,8 +14,8 @@ class Cronograma(models.Model):
     grado = models.TextField()  # Usamos TextField para almacenar la lista de grados como un string
     costo = models.DecimalField(max_digits=10, decimal_places=2)
     fecha_causacion = models.DateField()
-    tipo_pago = models.CharField(max_length=50, choices=[('matricula', 'Matrícula'), ('mensual', 'Mensual')])
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name='cronogramas')
+    tipo_pago = models.CharField(max_length=50, choices=[('transferencia', 'Transferencia'), ('efectivo', 'Efectivo')])
+    curso = models.CharField(max_length=100)
 
     def _str_(self):
         return f'Cronograma {self.codigo} - {self.curso.nombre}'
