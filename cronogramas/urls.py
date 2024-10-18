@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('cronogramas/', views.cronograma_list, name='cronograma_list'),
-    path('cronogramas/<int:pk>/', views.cronograma_detail, name='cronograma_detail'),
-    path('cronogramas/nuevo/', views.cronograma_create, name='cronograma_create'),
+    path('', views.cronograma_list, name='cronograma_list'),  # Lista de cronogramas
+    path('<int:pk>/', views.cronograma_detail, name='cronograma_detail'),  # Detalle del cronograma
+    path('nuevo/', views.cronograma_create, name='cronograma_create'),  # Crear un cronograma
 ]
