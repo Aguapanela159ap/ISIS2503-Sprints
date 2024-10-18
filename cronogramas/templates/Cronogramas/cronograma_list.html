@@ -13,11 +13,12 @@
             <th>Tipo de Pago</th>
         </tr>
         </thead>
+        <!----
         <tbody>
         {% for cronograma in cronogramas %}
         <tr>
             <td>{{ cronograma.codigo }}</td>
-            <td>{{ cronograma.grado }}</td>  <!-- Asumiendo que grado es una lista -->
+            <td>{{ cronograma.grado }}</td>  
             <td>{{ cronograma.curso }}</td>
             <td>{{ cronograma.costo }}</td>
             <td>{{ cronograma.fecha_causacion }}</td>
@@ -29,6 +30,7 @@
         </tr>
         {% endfor %}
         </tbody>
+        --->
     </table>
     <a href="{% url 'cronograma_create' %}" class="btn btn-success">Agregar Cronograma</a>
 </div>
