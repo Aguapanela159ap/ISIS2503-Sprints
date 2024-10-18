@@ -1,7 +1,7 @@
 from ..models import Cronograma
 
 def get_cronogramas():
-    queryset = Cronograma.objects.all().order_by('-fecha_causacion')[:10]
+    queryset = Cronograma.objects.all()
     return queryset
 
 def create_cronograma(form):

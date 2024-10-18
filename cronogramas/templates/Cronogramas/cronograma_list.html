@@ -11,7 +11,6 @@
             <th>Costo</th>
             <th>Fecha de Causación</th>
             <th>Tipo de Pago</th>
-            <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
@@ -19,10 +18,11 @@
         <tr>
             <td>{{ cronograma.codigo }}</td>
             <td>{{ cronograma.grado }}</td>  <!-- Asumiendo que grado es una lista -->
-            <td>{{ cronograma.curso.nombre }}</td>
+            <td>{{ cronograma.curso }}</td>
             <td>{{ cronograma.costo }}</td>
             <td>{{ cronograma.fecha_causacion }}</td>
             <td>{{ cronograma.tipo_pago }}</td>
+            <p>Total de cronogramas: {{ cronogramas|length }}</p>
             <td>
                 <a href="{% url 'cronograma_delete' cronograma.id %}" class="btn btn-danger">Eliminar</a>
                 <a href="{% url 'cronograma_edit' cronograma.id %}" class="btn btn-warning">Editar</a> <!-- Asegúrate de que esta URL esté definida -->
