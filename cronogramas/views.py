@@ -4,6 +4,9 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .logic.logic_cronograma import create_cronograma, get_cronogramas, delete_cronograma  # Importa las funciones de cronogramas
+from django.shortcuts import render, get_object_or_404
+from .models import Cronograma
+
 
 def cronograma_list(request):
     cronogramas = get_cronogramas()
@@ -28,3 +31,7 @@ def cronograma_delete(request, cronograma_id):
     except ValueError as e:
         messages.error(request, str(e))
         return redirect('cronograma_list')
+
+def cronograma_detail(request, pk):
+    cronograma = get_object_or_404(Cronograma, pk=pk)
+    return render(request, 'cronogramas/cronograma_detail.html', {'cronograma': cronograma})
