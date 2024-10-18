@@ -22,9 +22,9 @@
             <td>{{ cronograma.costo }}</td>
             <td>{{ cronograma.fecha_causacion }}</td>
             <td>{{ cronograma.tipo_pago }}</td>
-            <p>Total de cronogramas: {{ cronogramas|length }}</p>
         </tr>
         {% endfor %}
+        <p>Total de cronogramas: {{ cronogramas|length }}</p>
         </tbody>
     </table>
     <a href="{% url 'cronograma_create' %}" class="btn btn-success">Agregar Cronograma</a>
