@@ -10,7 +10,7 @@ from .models import Cronograma
 
 def cronograma_list(request):
     cronogramas = get_cronogramas()
-    return render(request, 'cronogramas/cronograma_list.html', {'cronogramas': cronogramas})
+    return render(request, 'Cronogramas/cronograma_list.html', {'cronogramas': cronogramas})
 
 def cronograma_create(request):
     if request.method == 'POST':
@@ -21,7 +21,7 @@ def cronograma_create(request):
             return redirect('cronograma_list')
     else:
         form = CronogramaForm()
-    return render(request, 'cronogramas/cronograma_form.html', {'form': form})
+    return render(request, 'Cronogramas/cronograma_form.html', {'form': form})
 
 def cronograma_delete(request, cronograma_id):
     try:
@@ -34,4 +34,4 @@ def cronograma_delete(request, cronograma_id):
 
 def cronograma_detail(request, pk):
     cronograma = get_object_or_404(Cronograma, pk=pk)
-    return render(request, 'cronogramas/cronograma_detail.html', {'cronograma': cronograma})
+    return render(request, 'Cronogramas/cronograma_detail.html', {'cronograma': cronograma})
