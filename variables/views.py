@@ -35,7 +35,7 @@ def morosos_list(request):
         'morosos': morosos
     }
 
-    return render(request, 'morosos_list.html', context)
+    return render(request, 'Variable/morosos_list.html', context)
 
 def variable_list(request):
     query = request.GET.get('search', '')  # Obtener el término de búsqueda
