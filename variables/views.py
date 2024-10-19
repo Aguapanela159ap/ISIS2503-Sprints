@@ -21,7 +21,7 @@ def morosos_list(request):
 
     # Calcular la deuda de cada estudiante
     for estudiante in estudiantes:
-        cuentas_estudiante = cuentas.filter(estudiante=estudiante)
+        cuentas_estudiante = cuentas.filter(variable=estudiante)
         total_pagado = sum(cuenta.value for cuenta in cuentas_estudiante)
         deuda = precio_matricula - total_pagado
 
