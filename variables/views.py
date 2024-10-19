@@ -4,11 +4,14 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Variable  # Asegúrate de importar el modelo Variable
 from measurements.models import Measurement
+import time
 
 from .forms import VariableForm
 from .logic.variable_logic import get_variables, create_variable
 
 def morosos_list(request):
+
+    start_time = time.time()
     # Precio de la matrícula
     precio_matricula = 1000000
 
@@ -30,12 +33,14 @@ def morosos_list(request):
                 'estudiante': estudiante,
                 'deuda': deuda,
             })
+    end_time = time.time()
+    tiempo_total = end_time - start_time
 
     context = {
         'morosos': morosos
     }
 
-    return render(request, 'Variable/morosos_list.html', context)
+    return render(request, 'Variable/morosos_list.html', context, {'tiempo_total': tiempo_total})
 
 def variable_list(request):
     query = request.GET.get('search', '')  # Obtener el término de búsqueda

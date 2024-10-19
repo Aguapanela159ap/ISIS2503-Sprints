@@ -10,6 +10,9 @@
         </tr>
         </thead>
         <tbody>
+        <div class="cronometro">
+            <p>Tiempo de generación de la lista: {{ tiempo_total }} segundos</p>
+        </div>
         {% for moroso in morosos %}
         <tr>
             <td>{{ moroso.estudiante.name }}</td>
