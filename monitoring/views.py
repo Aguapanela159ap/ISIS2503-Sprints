@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 import os  # Asegúrate de incluir esta línea
 from django.conf import settings
@@ -11,3 +12,6 @@ def log_monitor(request):
     with open(log_file_path, 'r') as f:
         logs = f.readlines()
     return render(request, 'log_monitor.html', {'logs': logs})
+
+def healthCheck(request):
+    return HttpResponse('ok')
