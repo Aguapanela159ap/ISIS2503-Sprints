@@ -2,6 +2,7 @@
 {% block content %}
 <div class="content">
     <h4>Estudiantes con pagos pendientes</h4>
+    <p>Tiempo de generación de la lista: {{ tiempo_total }} segundos</p>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -10,9 +11,6 @@
         </tr>
         </thead>
         <tbody>
-        <div class="cronometro">
-            <p>Tiempo de generación de la lista: {{ tiempo_total }} segundos</p>
-        </div>
         {% for moroso in morosos %}
         <tr>
             <td>{{ moroso.estudiante.name }}</td>

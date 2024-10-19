@@ -37,10 +37,11 @@ def morosos_list(request):
     tiempo_total = end_time - start_time
 
     context = {
-        'morosos': morosos
+        'morosos': morosos,
+        'tiempo_total': round(tiempo_total, 2)
     }
 
-    return render(request, 'Variable/morosos_list.html', context, {'tiempo_total': tiempo_total})
+    return render(request, 'Variable/morosos_list.html', context)
 
 def variable_list(request):
     query = request.GET.get('search', '')  # Obtener el término de búsqueda
