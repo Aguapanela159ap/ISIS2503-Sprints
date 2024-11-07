@@ -1,20 +1,20 @@
-from ..models import Measurement
+from ..models import Matricula
 
-def get_measurements():
-    queryset = Measurement.objects.all().order_by('-dateTime')[:10]
+def get_matriculas():
+    queryset = Matricula.objects.all().order_by('-dateTime')[:10]
     return (queryset)
 
-def create_measurement(form):
-    measurement = form.save()
-    measurement.save()
+def create_matricula(form):
+    matricula = form.save()
+    matricula.save()
     return ()
 
-# logic_measurement.py
+# logic_matricula.py
 
-def delete_measurement(measurement_id):
+def delete_matricula(matricula_id):
     # Lógica para eliminar una medición
     try:
-        measurement = Measurement.objects.get(id=measurement_id)
-        measurement.delete()
-    except Measurement.DoesNotExist:
+        matricula = Matricula.objects.get(id=matricula_id)
+        matricula.delete()
+    except Matricula.DoesNotExist:
         raise ValueError("La medición no existe")
